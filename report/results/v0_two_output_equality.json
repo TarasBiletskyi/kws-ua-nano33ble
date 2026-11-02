@@ -1,0 +1,27 @@
+{
+  "n_clips": 1204,
+  "softmax_identical": 1204,
+  "softmax_argmax_identical": 1204,
+  "softmax_max_abs_diff": 0,
+  "gap_identical_to_published_mean_tensor": 1204,
+  "gap_max_abs_diff": 0,
+  "two_output_accuracy": 0.9543189368770764,
+  "published_mean_tensor_quant": {
+    "scale": 0.020905127748847008,
+    "zero_point": -128
+  },
+  "two_output_gap_quant": {
+    "scale": 0.020905127748847008,
+    "zero_point": -128
+  },
+  "two_output_softmax_quant": {
+    "scale": 0.00390625,
+    "zero_point": -128
+  },
+  "passed": true,
+  "published_model": "external\\kws-model-evaluation\\results\\tflite\\with_aug_int8.tflite",
+  "two_output_model": "with_aug_two_output_int8.tflite",
+  "two_output_sha256": "394c9fad4a80938938ee822fcef1d6f3ea5a56413f27791158cbbbdd4f2e014b",
+  "checkpoint": "best_model.keras",
+  "model_repo_commit": "de81ca142095ede86476a84b6bc96dd5151b672e"
+}

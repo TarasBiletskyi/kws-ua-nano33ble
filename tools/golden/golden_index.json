@@ -1,0 +1,391 @@
+{
+ "model": "with_aug_two_output_int8.tflite",
+ "n": 50,
+ "seed": 42,
+ "input_scale": 0.06802022457122803,
+ "input_zero_point": -17,
+ "quant": {
+  "input": {
+   "shape": [
+    1,
+    98,
+    39,
+    1
+   ],
+   "scale": 0.06802022457122803,
+   "zero_point": -17
+  },
+  "gap": {
+   "shape": [
+    1,
+    64
+   ],
+   "scale": 0.020905127748847008,
+   "zero_point": -128,
+   "index": 37
+  },
+  "softmax": {
+   "shape": [
+    1,
+    15
+   ],
+   "scale": 0.00390625,
+   "zero_point": -128,
+   "index": 39
+  }
+ },
+ "max_abs_diff_frontend_ref_vs_librosa": 4.6253204345703125e-05,
+ "litert_argmax_accuracy_on_golden": 0.98,
+ "clips": [
+  {
+   "i": 0,
+   "stem": "5c4607232151878a90899a39b11411f955b17916ef50d14ad8bb5f2cc081b783137a831fe19a2c41d93cf9e3f4065b74b8a8d4a747d8546dd00b9bd20cce8209__common_voice_uk_21266173__0002730",
+   "class": "далі",
+   "label": 0,
+   "pred": 0
+  },
+  {
+   "i": 1,
+   "stem": "c131a08f9b4910b859dae55cd2f1c4299126a373050685fac90646cc4c837a46f6d7c5c49b160af73dcc21e82d78026e3625b59558f63396c2f27e01761b7c5f__common_voice_uk_22243471__0001490",
+   "class": "далі",
+   "label": 0,
+   "pred": 0
+  },
+  {
+   "i": 2,
+   "stem": "c131a08f9b4910b859dae55cd2f1c4299126a373050685fac90646cc4c837a46f6d7c5c49b160af73dcc21e82d78026e3625b59558f63396c2f27e01761b7c5f__common_voice_uk_23979676__0001580",
+   "class": "далі",
+   "label": 0,
+   "pred": 0
+  },
+  {
+   "i": 3,
+   "stem": "1abc4acde14a726be826508ead779204ac1825758b8cea0854ac04b2a9beb743a037524581be53334af4527085cb0cf7f7a1b7573ca473e4c9c1e2d25b39479b__common_voice_uk_37923565__0003750",
+   "class": "два",
+   "label": 1,
+   "pred": 1
+  },
+  {
+   "i": 4,
+   "stem": "3a86bd15910d833632790b9add9c145d13da9059bf68b0ea09fbf8b53a67fda0e216b0b6e714008c361ef8f7377729fdf254d94dc6f614ee3fe10a1aa7edb8ca__common_voice_uk_21022511__0001550",
+   "class": "два",
+   "label": 1,
+   "pred": 1
+  },
+  {
+   "i": 5,
+   "stem": "5222971dea54a9d33c12063672a3e2f4565e1a3de9f87ac4d9905462789834a46b01aab6b342189af86774135395ba1a92cfc9b405ee6f6997f9d61ef105cbc8__common_voice_uk_23689229__0003910",
+   "class": "два",
+   "label": 1,
+   "pred": 1
+  },
+  {
+   "i": 6,
+   "stem": "c131a08f9b4910b859dae55cd2f1c4299126a373050685fac90646cc4c837a46f6d7c5c49b160af73dcc21e82d78026e3625b59558f63396c2f27e01761b7c5f__common_voice_uk_21743803__0005440",
+   "class": "добре",
+   "label": 2,
+   "pred": 2
+  },
+  {
+   "i": 7,
+   "stem": "c131a08f9b4910b859dae55cd2f1c4299126a373050685fac90646cc4c837a46f6d7c5c49b160af73dcc21e82d78026e3625b59558f63396c2f27e01761b7c5f__common_voice_uk_24582869__0001940",
+   "class": "добре",
+   "label": 2,
+   "pred": 2
+  },
+  {
+   "i": 8,
+   "stem": "e6d1a6944010b9862e14ed857d1db4e7c6e48c5790c2f4caf5e8cdf9fc38da60a3a86e132d62d9e69a6d83389788ee5b9a6bdaf8b3d30fd253c9886077fdedef__common_voice_uk_23968362__0000720",
+   "class": "добре",
+   "label": 2,
+   "pred": 2
+  },
+  {
+   "i": 9,
+   "stem": "10edc0e3d132b7338942af0b3871cf69334d75a56b111bad9093f20c09ec75eec49ff4489c7c2356695878c392bb363c9578c98da6875923b17e13d0e0f56a51__common_voice_uk_38194628__0000920",
+   "class": "зараз",
+   "label": 3,
+   "pred": 3
+  },
+  {
+   "i": 10,
+   "stem": "c131a08f9b4910b859dae55cd2f1c4299126a373050685fac90646cc4c837a46f6d7c5c49b160af73dcc21e82d78026e3625b59558f63396c2f27e01761b7c5f__common_voice_uk_21629373__0000860",
+   "class": "зараз",
+   "label": 3,
+   "pred": 3
+  },
+  {
+   "i": 11,
+   "stem": "c131a08f9b4910b859dae55cd2f1c4299126a373050685fac90646cc4c837a46f6d7c5c49b160af73dcc21e82d78026e3625b59558f63396c2f27e01761b7c5f__common_voice_uk_21894418__0000910",
+   "class": "зараз",
+   "label": 3,
+   "pred": 3
+  },
+  {
+   "i": 12,
+   "stem": "18f40f1c58d2f071deef22671b367e0a32eaccacce46a02701b64eba23c36e84d01c23406dd7ee50dd82c8819d8b1ae6e1a8af83841b9117f129013153dcbb69__common_voice_uk_22433691__0000800",
+   "class": "ні",
+   "label": 4,
+   "pred": 4
+  },
+  {
+   "i": 13,
+   "stem": "18f40f1c58d2f071deef22671b367e0a32eaccacce46a02701b64eba23c36e84d01c23406dd7ee50dd82c8819d8b1ae6e1a8af83841b9117f129013153dcbb69__common_voice_uk_22513985__0002260",
+   "class": "ні",
+   "label": 4,
+   "pred": 4
+  },
+  {
+   "i": 14,
+   "stem": "4b761522fa4a65e96eb43a6b39a99ec77829cd19add2577159f41508b621c1055de7485b18ed3aded417cd1577b3a959b8cb162ab325e56d51e715830b3b9dc0__common_voice_uk_21577380__0002120",
+   "class": "ні",
+   "label": 4,
+   "pred": 4
+  },
+  {
+   "i": 15,
+   "stem": "371beafef10fe00f95ceb0220b91a4def0d9cc3d753207d73239261928c9da7ef2ef233ee4e1e8b2b5b8022475d4593a78741b102b044c7737e4be94ac01d18a__common_voice_uk_38232079__0002630",
+   "class": "один",
+   "label": 5,
+   "pred": 5
+  },
+  {
+   "i": 16,
+   "stem": "5c6801a8e238857a16345af6cc45dd8e168ad1c11cfd1bd4bc8784e3ccde5195f95a93dd8c3f4f29b516eae1efc74251ba7a72741f0e7cea1385dc952bcb2ba8__common_voice_uk_27627747__0001170",
+   "class": "один",
+   "label": 5,
+   "pred": 5
+  },
+  {
+   "i": 17,
+   "stem": "b64d2481230a36a3449a8563245a6c1525cc7e4fed404d4bb93c81f79ef2631788c2bd9992703b0c1002434c553da4dbc3418fa1d50f2d1dc52087f0c52737d6__common_voice_uk_21343482__0001030",
+   "class": "один",
+   "label": 5,
+   "pred": 5
+  },
+  {
+   "i": 18,
+   "stem": "5bcca575f52ea87e8d1d5a2fd91a56c0925293d15664708001ac8e23a53d0b8f0a8f1b0af7e6b939f904d964a9906dc3fe986adef1442226124adb44fb02faef__common_voice_uk_24158646__0001010",
+   "class": "ось",
+   "label": 6,
+   "pred": 6
+  },
+  {
+   "i": 19,
+   "stem": "5bcca575f52ea87e8d1d5a2fd91a56c0925293d15664708001ac8e23a53d0b8f0a8f1b0af7e6b939f904d964a9906dc3fe986adef1442226124adb44fb02faef__common_voice_uk_24444383__0000880",
+   "class": "ось",
+   "label": 6,
+   "pred": 6
+  },
+  {
+   "i": 20,
+   "stem": "7b46cb29e9e018a6cc7960ff7d55b252e5529a35a89cef813c0add2267d4b2a7155babccaa1f03143aa73aecdacf8a626b23d6d7d95e01db4d0267b766caf4eb__common_voice_uk_23579428__0000890",
+   "class": "ось",
+   "label": 6,
+   "pred": 6
+  },
+  {
+   "i": 21,
+   "stem": "181952231ba7221af0f6c7992e69309621b797dd9c988992f24c740aad6a8c99bb5349c66f60f0c642f0619f44fdf6bdea32ed67d543630c5f67ab26355fee09__common_voice_uk_21831622__0003150",
+   "class": "потім",
+   "label": 7,
+   "pred": 7
+  },
+  {
+   "i": 22,
+   "stem": "e6d1a6944010b9862e14ed857d1db4e7c6e48c5790c2f4caf5e8cdf9fc38da60a3a86e132d62d9e69a6d83389788ee5b9a6bdaf8b3d30fd253c9886077fdedef__common_voice_uk_26631641__0005120",
+   "class": "потім",
+   "label": 7,
+   "pred": 7
+  },
+  {
+   "i": 23,
+   "stem": "fcc73b79faea5ab522a9a39fd7f5ee342cb7ff157421c6de0b7bb347331683f40bb15691985dedafefdb86d07e0cccb3cd16d18a079f05a144d2f923a15f8a03__common_voice_uk_32818726__0000720",
+   "class": "потім",
+   "label": 7,
+   "pred": 7
+  },
+  {
+   "i": 24,
+   "stem": "18f40f1c58d2f071deef22671b367e0a32eaccacce46a02701b64eba23c36e84d01c23406dd7ee50dd82c8819d8b1ae6e1a8af83841b9117f129013153dcbb69__common_voice_uk_22429682__0004260",
+   "class": "сьогодні",
+   "label": 8,
+   "pred": 8
+  },
+  {
+   "i": 25,
+   "stem": "74b48840da9baaf863ce4a6e54cd6aa9c2309447c1ef6fdb383aaab45aad6aa587c108b79a71caae2115326011baa4a30d35f021e5be7d5c5894d6d4e06ab767__common_voice_uk_38247555__0000780",
+   "class": "сьогодні",
+   "label": 8,
+   "pred": 8
+  },
+  {
+   "i": 26,
+   "stem": "7caab17b667a3d99c5d8e044abc1e645ee3c67cb69139ead9eb5f83b4db3e8f58b275ebb57ec35682444ab741250a78db6c37cd3ac385e8135e805a212d0c13e__common_voice_uk_25549183__0002560",
+   "class": "сьогодні",
+   "label": 8,
+   "pred": 8
+  },
+  {
+   "i": 27,
+   "stem": "73acc1e3a2c2cd70c665f6f9b657bbbd15333ab357fdd0df11499a9a3564c9b175eab368de7d0582a55d6ae6e32ca07ecccc9eab5971487324e4112deb7601a7__common_voice_uk_35241940__0001740",
+   "class": "так",
+   "label": 9,
+   "pred": 9
+  },
+  {
+   "i": 28,
+   "stem": "c2e53434f3b43f7f6bbede5e70afdcaa7ba703d196b968cde43eaed723804f1360945a56affe6af2bcb8d19a337a10d7f3f24124e832f28103d0bd4f9fac6b16__common_voice_uk_23559958__0002150",
+   "class": "так",
+   "label": 9,
+   "pred": 12
+  },
+  {
+   "i": 29,
+   "stem": "ec2554941ff9ff5b78e2134861fa38dacc6af6274598d418d8cc9fc4aa957393d27ecad935b5b2f8be9056a6fd1f91a2e88d183d2ace8d1256aac0eedb6ce2ae__common_voice_uk_30132065__0000670",
+   "class": "так",
+   "label": 9,
+   "pred": 9
+  },
+  {
+   "i": 30,
+   "stem": "575908ace6ef6d02730ece3077266484eadd42c3c8fd18b6bf1bc4e182acb8da4ba759eeba7cb564cda0667931910c86a0c7df5616fb5f177a1b125046aeb8eb__common_voice_uk_37809512__0000520",
+   "class": "там",
+   "label": 10,
+   "pred": 10
+  },
+  {
+   "i": 31,
+   "stem": "5916bc2b5b0a00a9638e924e50378b0be08c0561b4939d7dfb6b0691475a7c86e81ce4ef3426b0883c6498369ee765726e1690d3d2dba04dca305d12d6a73ead__common_voice_uk_23568560__0002690",
+   "class": "там",
+   "label": 10,
+   "pred": 10
+  },
+  {
+   "i": 32,
+   "stem": "b1090c6e660a85ac9851d692d0e875cc39c6e1e10c4bafed65edc60f69daa8935c9fa042673f760076e7c6b9a83e3ac79c1e4f4a5c369a457cdcf4fe89f3176c__common_voice_uk_21384865__0000720",
+   "class": "там",
+   "label": 10,
+   "pred": 10
+  },
+  {
+   "i": 33,
+   "stem": "181952231ba7221af0f6c7992e69309621b797dd9c988992f24c740aad6a8c99bb5349c66f60f0c642f0619f44fdf6bdea32ed67d543630c5f67ab26355fee09__common_voice_uk_22047580__0002690",
+   "class": "три",
+   "label": 11,
+   "pred": 11
+  },
+  {
+   "i": 34,
+   "stem": "40fc53f7809f5c345680df680e3e926835b678f23284c10f1a315517ea93178563bddaa3c039d187fc5a600c1d723b09175ab09e6cda4d51143ca46969241549__common_voice_uk_27314692__0005450",
+   "class": "три",
+   "label": 11,
+   "pred": 11
+  },
+  {
+   "i": 35,
+   "stem": "72954cb7b22e985aeb5750e603c7d6b4dc83d119700880e8ef2c99a2fc13b91e9ac86662ae231f0bc7173af446ae8d4fcbfe6e403fb94c8663d0b8e60e5878f6__common_voice_uk_25674605__0002690",
+   "class": "три",
+   "label": 11,
+   "pred": 11
+  },
+  {
+   "i": 36,
+   "stem": "76d1b7bb24abd21a152c4f718cc409838ceca632659a7b1e0686c3d0b0065d49e96546ca26a8e00675715c931440aa90c0ba2170f101e91921c6b13ec28c92c7__common_voice_uk_24689571__0007090",
+   "class": "тут",
+   "label": 12,
+   "pred": 12
+  },
+  {
+   "i": 37,
+   "stem": "a6aa625e28455fd3483625a41cf5083c1162899e11cfb7a6e5ec1dcf4e02f4def626ef25ba4480e0069f448613521529b1d48b745577036af7d156533806d2c2__common_voice_uk_40106817__0000570",
+   "class": "тут",
+   "label": 12,
+   "pred": 12
+  },
+  {
+   "i": 38,
+   "stem": "ce863cb848496477c74bef65b5a310595afeed5afdd71827d663a822034613957dc78bfd8ff7d5572d6f455fbbb996ef25cc736082fdef0fd0111ead5f0bd458__common_voice_uk_38192524__0001370",
+   "class": "тут",
+   "label": 12,
+   "pred": 12
+  },
+  {
+   "i": 39,
+   "stem": "silence_mfa_0029",
+   "class": "_silence",
+   "label": 13,
+   "pred": 13
+  },
+  {
+   "i": 40,
+   "stem": "silence_mfa_0126",
+   "class": "_silence",
+   "label": 13,
+   "pred": 13
+  },
+  {
+   "i": 41,
+   "stem": "silence_noise_0555_white",
+   "class": "_silence",
+   "label": 13,
+   "pred": 13
+  },
+  {
+   "i": 42,
+   "stem": "unk_00243__1792e9e05eed",
+   "class": "_unknown_",
+   "label": 14,
+   "pred": 14
+  },
+  {
+   "i": 43,
+   "stem": "unk_00548__6a36f4394ab6",
+   "class": "_unknown_",
+   "label": 14,
+   "pred": 14
+  },
+  {
+   "i": 44,
+   "stem": "unk_01200__1792e9e05eed",
+   "class": "_unknown_",
+   "label": 14,
+   "pred": 14
+  },
+  {
+   "i": 45,
+   "stem": "7608f32a52791fc7a8d4512268e4b820f561d7240306e9c4f5cdb78f87ef1857216946b308ee86ba777bb9411bbe5b40545fe25032b6bd4f23f9ab4908445553__common_voice_uk_21565036__0000780",
+   "class": "так",
+   "label": 9,
+   "pred": 9
+  },
+  {
+   "i": 46,
+   "stem": "silence_mfa_0057",
+   "class": "_silence",
+   "label": 13,
+   "pred": 13
+  },
+  {
+   "i": 47,
+   "stem": "unk_00272__2988d8dd1bf2",
+   "class": "_unknown_",
+   "label": 14,
+   "pred": 14
+  },
+  {
+   "i": 48,
+   "stem": "a6aa625e28455fd3483625a41cf5083c1162899e11cfb7a6e5ec1dcf4e02f4def626ef25ba4480e0069f448613521529b1d48b745577036af7d156533806d2c2__common_voice_uk_38274593__0002010",
+   "class": "тут",
+   "label": 12,
+   "pred": 12
+  },
+  {
+   "i": 49,
+   "stem": "85e1085b02bc2584fd90c7cdedf4ee726d3aefd1360876b62c37bdc22d05dade6261aee5aca5b925cc02d28adf2f2039471264f673fa24f94bc7e5e1eeb0502a__common_voice_uk_23694666__0004240",
+   "class": "ні",
+   "label": 4,
+   "pred": 4
+  }
+ ]
+}

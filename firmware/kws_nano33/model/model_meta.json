@@ -1,0 +1,82 @@
+{
+  "file": "with_aug_two_output_int8.tflite",
+  "bytes": 57960,
+  "sha256": "394c9fad4a80938938ee822fcef1d6f3ea5a56413f27791158cbbbdd4f2e014b",
+  "c_symbol": "g_kws_model",
+  "inputs": [
+    {
+      "name": "serving_default_input_layer:0",
+      "index": 0,
+      "shape": [
+        1,
+        98,
+        39,
+        1
+      ],
+      "dtype": "int8",
+      "scale": 0.06802022457122803,
+      "zero_point": -17
+    }
+  ],
+  "outputs": [
+    {
+      "name": "StatefulPartitionedCall_1:1",
+      "index": 37,
+      "shape": [
+        1,
+        64
+      ],
+      "dtype": "int8",
+      "scale": 0.020905127748847008,
+      "zero_point": -128
+    },
+    {
+      "name": "StatefulPartitionedCall_1:0",
+      "index": 39,
+      "shape": [
+        1,
+        15
+      ],
+      "dtype": "int8",
+      "scale": 0.00390625,
+      "zero_point": -128
+    }
+  ],
+  "ops": [
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "CONV_2D",
+    "DEPTHWISE_CONV_2D",
+    "CONV_2D",
+    "MEAN",
+    "FULLY_CONNECTED",
+    "SOFTMAX"
+  ],
+  "n_ops": 14,
+  "n_tensors": 44,
+  "classes": [
+    "далі",
+    "два",
+    "добре",
+    "зараз",
+    "ні",
+    "один",
+    "ось",
+    "потім",
+    "сьогодні",
+    "так",
+    "там",
+    "три",
+    "тут",
+    "_silence",
+    "_unknown_"
+  ],
+  "model_repo_commit": "de81ca142095ede86476a84b6bc96dd5151b672e",
+  "litert_version": "2.3.0"
+}

@@ -1,0 +1,96 @@
+{
+  "label": "sweep near laptop",
+  "log": "tools\\out\\pdm\\sweep_near_laptop.log",
+  "settle_s": 2.0,
+  "segments": [
+    {
+      "gain_reg": 20,
+      "gain_db": -10.0,
+      "n_intervals": 146,
+      "duration_s": 14.6,
+      "ac_p5_dbfs": -86.875,
+      "ac_median_dbfs": -83.5,
+      "ac_min_dbfs": -87.6,
+      "ac_max_dbfs": -77.9,
+      "pk_max_dbfs": -64.7,
+      "dc_mean_counts": -0.2808219178082192
+    },
+    {
+      "gain_reg": 40,
+      "gain_db": 0.0,
+      "n_intervals": 135,
+      "duration_s": 13.5,
+      "ac_p5_dbfs": -76.95,
+      "ac_median_dbfs": -73.1,
+      "ac_min_dbfs": -78.0,
+      "ac_max_dbfs": -60.8,
+      "pk_max_dbfs": -49.2,
+      "dc_mean_counts": -0.32592592592592595
+    },
+    {
+      "gain_reg": 60,
+      "gain_db": 10.0,
+      "n_intervals": 135,
+      "duration_s": 13.5,
+      "ac_p5_dbfs": -65.56,
+      "ac_median_dbfs": -62.9,
+      "ac_min_dbfs": -66.6,
+      "ac_max_dbfs": -53.1,
+      "pk_max_dbfs": -45.3,
+      "dc_mean_counts": -1.037037037037037
+    },
+    {
+      "gain_reg": 80,
+      "gain_db": 20.0,
+      "n_intervals": 205,
+      "duration_s": 20.5,
+      "ac_p5_dbfs": -55.8,
+      "ac_median_dbfs": -52.3,
+      "ac_min_dbfs": -56.7,
+      "ac_max_dbfs": -44.5,
+      "pk_max_dbfs": -34.2,
+      "dc_mean_counts": 1.4
+    }
+  ],
+  "continuity": {
+    "intervals": 701,
+    "elapsed_s": 70.1,
+    "samples": 1121536,
+    "expected_samples": 1121600,
+    "loss_pct": 0.005706134094151213,
+    "n_per_100ms_min": 1536,
+    "n_per_100ms_max": 1792,
+    "n_per_100ms_mean": 1599.9087018544935,
+    "short_reads": 0,
+    "empty_intervals": 0
+  },
+  "stalls": 0,
+  "events": [
+    "1.052 >> G 20",
+    "1.053 OK gain=20 db=-10.0",
+    "16.050 >> S",
+    "16.549 >> G 40",
+    "16.551 OK gain=40 db=0.0",
+    "31.549 >> S",
+    "32.049 >> G 60",
+    "32.050 OK gain=60 db=10.0",
+    "47.049 >> S",
+    "47.549 >> G 80",
+    "47.550 OK gain=80 db=20.0",
+    "69.049 >> S"
+  ],
+  "last_sum": {
+    "host": 69.053,
+    "t": 229721.0,
+    "run_s": 21.5,
+    "samples": 344064.0,
+    "expected": 344000.0,
+    "loss_pct": -0.019,
+    "cb": 1344.0,
+    "short": 0.0,
+    "stalls": 0.0,
+    "min_ac": -56.7,
+    "max_pk": -34.2,
+    "gain": 80.0
+  }
+}

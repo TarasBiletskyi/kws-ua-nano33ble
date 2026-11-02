@@ -1,0 +1,51 @@
+{
+  "label": "speech at +20 dB, 0.5 m",
+  "log": "tools\\out\\pdm\\speech_gain80.log",
+  "settle_s": 0.5,
+  "segments": [
+    {
+      "gain_reg": 80,
+      "gain_db": 20.0,
+      "n_intervals": 246,
+      "duration_s": 24.6,
+      "ac_p5_dbfs": -55.5,
+      "ac_median_dbfs": -50.5,
+      "ac_min_dbfs": -57.7,
+      "ac_max_dbfs": -16.3,
+      "pk_max_dbfs": -10.2,
+      "dc_mean_counts": -2.8780487804878048
+    }
+  ],
+  "continuity": {
+    "intervals": 251,
+    "elapsed_s": 25.1,
+    "samples": 401408,
+    "expected_samples": 401600,
+    "loss_pct": 0.04780876494023904,
+    "n_per_100ms_min": 1536,
+    "n_per_100ms_max": 1792,
+    "n_per_100ms_mean": 1599.2350597609561,
+    "short_reads": 0,
+    "empty_intervals": 0
+  },
+  "stalls": 0,
+  "events": [
+    "0.288 >> G 80",
+    "0.289 OK gain=80 db=20.0",
+    "24.586 >> S"
+  ],
+  "last_sum": {
+    "host": 24.591,
+    "t": 515521.0,
+    "run_s": 24.3,
+    "samples": 388864.0,
+    "expected": 388784.0,
+    "loss_pct": -0.021,
+    "cb": 1519.0,
+    "short": 0.0,
+    "stalls": 0.0,
+    "min_ac": -57.7,
+    "max_pk": -10.2,
+    "gain": 80.0
+  }
+}

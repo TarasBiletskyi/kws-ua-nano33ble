@@ -1,0 +1,51 @@
+{
+  "label": "quiet, board away from laptop, +20 dB",
+  "log": "tools\\out\\pdm\\quiet_far_gain80.log",
+  "settle_s": 2.0,
+  "segments": [
+    {
+      "gain_reg": 80,
+      "gain_db": 20.0,
+      "n_intervals": 181,
+      "duration_s": 18.1,
+      "ac_p5_dbfs": -54.6,
+      "ac_median_dbfs": -43.1,
+      "ac_min_dbfs": -60.6,
+      "ac_max_dbfs": -38.7,
+      "pk_max_dbfs": -25.2,
+      "dc_mean_counts": 28.23756906077348
+    }
+  ],
+  "continuity": {
+    "intervals": 201,
+    "elapsed_s": 20.1,
+    "samples": 321536,
+    "expected_samples": 321600,
+    "loss_pct": 0.01990049751243781,
+    "n_per_100ms_min": 1536,
+    "n_per_100ms_max": 1792,
+    "n_per_100ms_mean": 1599.681592039801,
+    "short_reads": 0,
+    "empty_intervals": 0
+  },
+  "stalls": 0,
+  "events": [
+    "0.273 >> G 80",
+    "0.274 OK gain=80 db=20.0",
+    "19.571 >> S"
+  ],
+  "last_sum": {
+    "host": 19.576,
+    "t": 687921.0,
+    "run_s": 19.3,
+    "samples": 308736.0,
+    "expected": 308784.0,
+    "loss_pct": 0.016,
+    "cb": 1206.0,
+    "short": 0.0,
+    "stalls": 0.0,
+    "min_ac": -60.6,
+    "max_pk": -25.2,
+    "gain": 80.0
+  }
+}

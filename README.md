@@ -9,7 +9,7 @@ corpus [common-voice-ua-kws-corpus](https://github.com/TarasBiletskyi/common-voi
 *Українською:* розпізнавання 13 українських ключових слів у реальному часі на мікроконтролері; вся обробка — від
 мікрофона до рішення — виконується на платі. Детальний звіт буде у `report/`.
 
-**Status:** work in progress — milestone M0 (PC-side preparation). Nothing runs on the board yet.
+**Status:** milestone M0 (PC-side preparation) complete on 2026-11-01: constant tables, two-output INT8 model (V0 bit-exact), model C array, golden vectors, operating-point simulation (hop 300 ms / K 2 recommended) and microphone-noise-floor check (frame-gate mitigation). M1 step 1 (toolchain) done on 2026-11-01: arduino-cli 1.5.1, Arduino IDE 2.3.10 and the core `arduino:mbed_nano` 4.6.0 are installed and the board enumerates as `arduino:mbed_nano:nano33ble` (COM4 on the development PC). M1 step 2 done the same day: the first sketch (`firmware/bringup/blink_hello`) compiles (85.7 KB flash, 44.6 KB static RAM), flashes over COM4 in 9 s and streams a 1 Hz heartbeat over USB serial (see `report/results/m1_bringup.md`). M1 step 3 done on 2026-11-02 (`firmware/bringup/pdm_rms`): the PDM microphone ran 10 minutes at 16 kHz without a lost buffer; noise floor −52 dBFS and speech ≈ −28 dBFS at the chosen gain +20 dB (register 80); a 2 s warm-up after `PDM.begin()` and the frame gate are confirmed requirements. Next: RAM baseline on the board (M1 step 4).
 
 ## Layout
 
@@ -27,9 +27,30 @@ corpus [common-voice-ua-kws-corpus](https://github.com/TarasBiletskyi/common-voi
 - PC: LiteRT Python runtime `ai-edge-litert` for all inference and verification; model conversion with the TensorFlow
   LiteRT converter (`tf.lite.TFLiteConverter`) in the model repository's environment.
 
+### Toolchain versions used in this project (installed 2026-11-01, Windows 11)
+
+| Component | Version / source |
+|---|---|
+| `arduino-cli` | 1.5.1 (winget `ArduinoSA.CLI`, MSI → `C:\Program Files\Arduino CLI`) |
+| Arduino IDE | 2.3.10 (winget `ArduinoSA.IDE.stable`, per-user install) |
+| Core "Arduino Mbed OS Nano Boards" `arduino:mbed_nano` | 4.6.0 (ArduinoCore-mbed 4.6.0), data dir `%LOCALAPPDATA%\Arduino15` (≈720 MB with tools) |
+| Compiler (bundled with the core) | `arm-none-eabi-gcc` 7-2017q4 |
+| Upload tools (bundled) | bossac 1.9.1-arduino2, openocd 0.11.0-arduino2, dfu-util 0.10.0-arduino1 |
+| Board | Arduino Nano 33 BLE Sense **Lite** (Tiny Machine Learning Kit; u-blox NINA-B306 = nRF52840), FQBN `arduino:mbed_nano:nano33ble` (the Sense variants use the plain Nano 33 BLE entry), USB VID:PID 2341:805A in sketch mode |
+| PC runtime | `ai-edge-litert` 2.3.0, Python 3.11 (`tools/requirements.txt`) |
+
 ## Build and run
 
-To be written at milestone M1/M2 (board bring-up, model on the board). Until then see `tools/README.md` for the PC side.
+Prerequisites on the PC (one-off):
+
+```powershell
+winget install --id ArduinoSA.CLI --exact          # optional: winget install --id ArduinoSA.IDE.stable --exact
+arduino-cli core update-index
+arduino-cli core install arduino:mbed_nano@4.6.0
+arduino-cli board list                             # expect: COM<n>  Arduino Nano 33 BLE  arduino:mbed_nano:nano33ble
+```
+
+Compiling and flashing the sketch is documented from milestone M2 on; see `tools/README.md` for the PC side.
 
 ## License
 

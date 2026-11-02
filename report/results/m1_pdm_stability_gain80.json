@@ -1,0 +1,51 @@
+{
+  "label": "10-minute stability run, +20 dB",
+  "log": "tools\\out\\pdm\\stability_gain80.log",
+  "settle_s": 2.0,
+  "segments": [
+    {
+      "gain_reg": 80,
+      "gain_db": 20.0,
+      "n_intervals": 5981,
+      "duration_s": 598.1,
+      "ac_p5_dbfs": -54.5,
+      "ac_median_dbfs": -52.2,
+      "ac_min_dbfs": -56.6,
+      "ac_max_dbfs": -24.7,
+      "pk_max_dbfs": -8.8,
+      "dc_mean_counts": -0.8669118876442067
+    }
+  ],
+  "continuity": {
+    "intervals": 6001,
+    "elapsed_s": 600.1,
+    "samples": 9601536,
+    "expected_samples": 9601600,
+    "loss_pct": 0.0006665555740709882,
+    "n_per_100ms_min": 1536,
+    "n_per_100ms_max": 1792,
+    "n_per_100ms_mean": 1599.9893351108149,
+    "short_reads": 0,
+    "empty_intervals": 0
+  },
+  "stalls": 0,
+  "events": [
+    "0.293 >> G 80",
+    "0.294 OK gain=80 db=20.0",
+    "599.075 >> S"
+  ],
+  "last_sum": {
+    "host": 599.08,
+    "t": 1330621.0,
+    "run_s": 598.8,
+    "samples": 9580544.0,
+    "expected": 9580768.0,
+    "loss_pct": 0.002,
+    "cb": 37424.0,
+    "short": 0.0,
+    "stalls": 0.0,
+    "min_ac": -56.6,
+    "max_pk": -8.8,
+    "gain": 80.0
+  }
+}

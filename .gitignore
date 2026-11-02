@@ -13,3 +13,15 @@ firmware/**/build/
 
 # local scratch
 tools/out/
+
+# arduino-cli build output
+build/
+
+# editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# serial logs anywhere outside tools/out
+*.log

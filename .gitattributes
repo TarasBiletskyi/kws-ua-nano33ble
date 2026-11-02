@@ -1,0 +1,15 @@
+# Normalise line endings in the repository; check out as LF everywhere (Arduino, GCC, Python and PowerShell 7 all accept LF)
+* text=auto eol=lf
+
+# Generated C sources are text but huge — keep diffs out of the way
+firmware/kws_nano33/model_data.cpp linguist-generated=true -diff
+firmware/kws_nano33/golden_set.h   linguist-generated=true -diff
+firmware/kws_nano33/fe_tables.h    linguist-generated=true
+
+# Binary artefacts
+*.tflite binary
+*.npz    binary
+*.npy    binary
+*.wav    binary
+*.png    binary
+*.pdf    binary
