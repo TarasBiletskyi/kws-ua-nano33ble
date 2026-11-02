@@ -1,0 +1,3 @@
+[submodule "external/kws-model-evaluation"]
+	path = external/kws-model-evaluation
+	url = https://github.com/TarasBiletskyi/kws-model-evaluation.git

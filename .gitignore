@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Arduino / build outputs
+firmware/**/build/
+*.elf
+*.bin
+*.hex
+*.map
+
+# local scratch
+tools/out/

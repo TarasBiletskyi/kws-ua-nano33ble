@@ -1,0 +1,10 @@
+# PC-side tools: LiteRT runtime only (no TensorFlow). Model conversion runs in the
+# model repository's environment (external/kws-model-evaluation, TensorFlow 2.17).
+numpy>=1.26,<2.0
+scipy>=1.10
+librosa>=0.10
+soundfile>=0.12
+pyyaml>=6.0
+pyserial>=3.5
+ai-edge-litert==2.3.0
+pytest>=8
