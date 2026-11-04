@@ -1,0 +1,144 @@
+{
+  "clips": 1204,
+  "weight_scale_rel_to_class0": [
+    1.0,
+    0.8938617165561863,
+    0.8610291090206118,
+    0.8446541216251734,
+    0.9922203520768533,
+    0.8004862548406119,
+    0.9951282474515264,
+    0.8271974429665319,
+    1.0079705827428875,
+    1.109330177744261,
+    0.9892821853006574,
+    0.9187337636372153,
+    0.8148465066086765,
+    0.9308240182299289,
+    0.9205810350078532
+  ],
+  "pc_int8_softmax": {
+    "accuracy_pct": 95.43189368770764,
+    "correct_and_conf_ge_0.55_pct": 94.43521594684385,
+    "correct_and_conf_ge_0.85_pct": 88.37209302325581
+  },
+  "float_head_correct_scales": {
+    "accuracy_pct": 95.51495016611295,
+    "correct_and_conf_ge_0.55_pct": 94.35215946843853,
+    "correct_and_conf_ge_0.85_pct": 88.28903654485049
+  },
+  "float_head_board_single_scale": {
+    "accuracy_pct": 94.35215946843853,
+    "correct_and_conf_ge_0.55_pct": 93.43853820598007,
+    "correct_and_conf_ge_0.85_pct": 87.12624584717608
+  },
+  "float_head_vs_int8_argmax_agree_pct": 99.75083056478405,
+  "board_vs_correct_argmax_changed_clips": 17,
+  "per_class": [
+    {
+      "class": "далі",
+      "weight_scale_rel_to_class0": 1.0,
+      "clips": 42,
+      "recall_ok_pct": 92.85714285714286,
+      "recall_board_pct": 92.85714285714286
+    },
+    {
+      "class": "два",
+      "weight_scale_rel_to_class0": 0.8938617165561863,
+      "clips": 55,
+      "recall_ok_pct": 94.54545454545455,
+      "recall_board_pct": 94.54545454545455
+    },
+    {
+      "class": "добре",
+      "weight_scale_rel_to_class0": 0.8610291090206118,
+      "clips": 55,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    },
+    {
+      "class": "зараз",
+      "weight_scale_rel_to_class0": 0.8446541216251734,
+      "clips": 44,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    },
+    {
+      "class": "ні",
+      "weight_scale_rel_to_class0": 0.9922203520768533,
+      "clips": 97,
+      "recall_ok_pct": 96.90721649484536,
+      "recall_board_pct": 95.87628865979381
+    },
+    {
+      "class": "один",
+      "weight_scale_rel_to_class0": 0.8004862548406119,
+      "clips": 43,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    },
+    {
+      "class": "ось",
+      "weight_scale_rel_to_class0": 0.9951282474515264,
+      "clips": 60,
+      "recall_ok_pct": 93.33333333333333,
+      "recall_board_pct": 91.66666666666666
+    },
+    {
+      "class": "потім",
+      "weight_scale_rel_to_class0": 0.8271974429665319,
+      "clips": 30,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    },
+    {
+      "class": "сьогодні",
+      "weight_scale_rel_to_class0": 1.0079705827428875,
+      "clips": 27,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    },
+    {
+      "class": "так",
+      "weight_scale_rel_to_class0": 1.109330177744261,
+      "clips": 242,
+      "recall_ok_pct": 85.53719008264463,
+      "recall_board_pct": 80.99173553719008
+    },
+    {
+      "class": "там",
+      "weight_scale_rel_to_class0": 0.9892821853006574,
+      "clips": 78,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 97.43589743589743
+    },
+    {
+      "class": "три",
+      "weight_scale_rel_to_class0": 0.9187337636372153,
+      "clips": 23,
+      "recall_ok_pct": 95.65217391304348,
+      "recall_board_pct": 95.65217391304348
+    },
+    {
+      "class": "тут",
+      "weight_scale_rel_to_class0": 0.8148465066086765,
+      "clips": 108,
+      "recall_ok_pct": 95.37037037037037,
+      "recall_board_pct": 96.29629629629629
+    },
+    {
+      "class": "_silence",
+      "weight_scale_rel_to_class0": 0.9308240182299289,
+      "clips": 150,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    },
+    {
+      "class": "_unknown_",
+      "weight_scale_rel_to_class0": 0.9205810350078532,
+      "clips": 150,
+      "recall_ok_pct": 100.0,
+      "recall_board_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "builds": {
+    "A": {
+      "label": "A",
+      "log": "tools\\out\\ram\\ram_baseline_a.log",
+      "blocks": 6,
+      "sum_lines_identical": true,
+      "lnk": {
+        "iter": 7,
+        "data_start": 536871424,
+        "data_end": 536874984,
+        "bss_start": 536874984,
+        "bss_end": 536915976,
+        "heap_start": 536915976,
+        "heap_limit": 537132032,
+        "stack_limit": 537132032,
+        "stack_top": 537133056,
+        "data": 3560,
+        "bss": 40992,
+        "static": 44552,
+        "heap_region": 216056,
+        "isr_stack": 1024,
+        "main_stack_addr": 536881920
+      },
+      "sys": {
+        "cpuid": 1091551809,
+        "compiler_id": 2,
+        "compiler_version": 90200,
+        "ram0_start": 536870912,
+        "ram0_size": 262144,
+        "rom0_start": 0,
+        "rom0_size": 1048576
+      },
+      "heap0": {
+        "current": 876,
+        "max": 114547,
+        "total": 4041156,
+        "reserved": 216056,
+        "allocs": 7,
+        "fails": 54,
+        "overhead": 100
+      },
+      "threads": [
+        {
+          "name": "main",
+          "id": 536879592,
+          "state": 2,
+          "prio": 24,
+          "stack": 32768,
+          "used": 824,
+          "free": 31944
+        },
+        {
+          "name": "rtx_idle",
+          "id": 536878136,
+          "state": 1,
+          "prio": 1,
+          "stack": 512,
+          "used": 392,
+          "free": 120
+        },
+        {
+          "name": "rtx_timer",
+          "id": 536878068,
+          "state": 3,
+          "prio": 40,
+          "stack": 768,
+          "used": 104,
+          "free": 664
+        },
+        {
+          "name": "USBevt",
+          "id": 536916600,
+          "state": 3,
+          "prio": 24,
+          "stack": 256,
+          "used": 136,
+          "free": 120
+        }
+      ],
+      "stk": {
+        "threads": 4,
+        "reserved": 34304,
+        "max_used": 1456
+      },
+      "probe": {
+        "largest_malloc": 113671
+      },
+      "heap": {
+        "current": 876,
+        "max": 114547,
+        "total": 4714536,
+        "reserved": 216056,
+        "allocs": 7,
+        "fails": 63,
+        "overhead": 100
+      },
+      "kws": {
+        "total": 0
+      },
+      "sum": {
+        "ram_total": 262144,
+        "reserved_low": 512,
+        "static": 44552,
+        "kws_buffers": 0,
+        "main_stack": 32768,
+        "main_stack_used": 824,
+        "core_static_wo_main_stack": 11784,
+        "heap_region": 216056,
+        "heap_in_use": 976,
+        "heap_largest_free": 113671,
+        "isr_stack": 1024
+      }
+    },
+    "B": {
+      "label": "B",
+      "log": "tools\\out\\ram\\ram_baseline_b.log",
+      "blocks": 6,
+      "sum_lines_identical": true,
+      "lnk": {
+        "iter": 7,
+        "data_start": 536871424,
+        "data_end": 536874984,
+        "bss_start": 536874992,
+        "bss_end": 537127344,
+        "heap_start": 537127344,
+        "heap_limit": 537132032,
+        "stack_limit": 537132032,
+        "stack_top": 537133056,
+        "data": 3560,
+        "bss": 252352,
+        "static": 255920,
+        "heap_region": 4688,
+        "isr_stack": 1024,
+        "main_stack_addr": 537093288
+      },
+      "sys": {
+        "cpuid": 1091551809,
+        "compiler_id": 2,
+        "compiler_version": 90200,
+        "ram0_start": 536870912,
+        "ram0_size": 262144,
+        "rom0_start": 0,
+        "rom0_size": 1048576
+      },
+      "heap0": {
+        "current": 876,
+        "max": 1388,
+        "total": 4284,
+        "reserved": 4688,
+        "allocs": 7,
+        "fails": 42,
+        "overhead": 100
+      },
+      "threads": [
+        {
+          "name": "main",
+          "id": 537090960,
+          "state": 2,
+          "prio": 24,
+          "stack": 32768,
+          "used": 1912,
+          "free": 30856
+        },
+        {
+          "name": "rtx_idle",
+          "id": 537089504,
+          "state": 1,
+          "prio": 1,
+          "stack": 512,
+          "used": 392,
+          "free": 120
+        },
+        {
+          "name": "rtx_timer",
+          "id": 537089436,
+          "state": 3,
+          "prio": 40,
+          "stack": 768,
+          "used": 104,
+          "free": 664
+        },
+        {
+          "name": "USBevt",
+          "id": 537127968,
+          "state": 3,
+          "prio": 24,
+          "stack": 256,
+          "used": 136,
+          "free": 120
+        }
+      ],
+      "stk": {
+        "threads": 4,
+        "reserved": 34304,
+        "max_used": 2544
+      },
+      "probe": {
+        "largest_malloc": 512,
+        "fill_1k_total": 0,
+        "fill_pieces": 0
+      },
+      "heap": {
+        "current": 876,
+        "max": 1388,
+        "total": 4852,
+        "reserved": 4688,
+        "allocs": 7,
+        "fails": 49,
+        "overhead": 100
+      },
+      "kws": {
+        "arena": 536922544,
+        "arena_bytes": 163840,
+        "audio_ring": 536875020,
+        "audio_bytes": 32000,
+        "logmel_ring": 536907020,
+        "logmel_bytes": 15520,
+        "total": 211360,
+        "checksum": 14
+      },
+      "sum": {
+        "ram_total": 262144,
+        "reserved_low": 512,
+        "static": 255920,
+        "kws_buffers": 211360,
+        "main_stack": 32768,
+        "main_stack_used": 1912,
+        "core_static_wo_main_stack": 11792,
+        "heap_region": 4688,
+        "heap_in_use": 976,
+        "heap_largest_free": 512,
+        "heap_fill_total": 0,
+        "isr_stack": 1024
+      }
+    }
+  },
+  "derived": {
+    "ram_for_data_bss_heap_bytes": 260608,
+    "core_static_incl_main_stack_bytes": 44552,
+    "available_for_kws_statics_and_heap_bytes": 216056,
+    "heap_rule_bytes": 8192,
+    "safe_static_budget_for_kws_bytes": 207864,
+    "tested_kws_buffers_bytes": 211360,
+    "heap_region_with_tested_buffers_bytes": 4688
+  }
+}

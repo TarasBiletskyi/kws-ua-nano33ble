@@ -1,0 +1,83 @@
+{
+  "clips": 3,
+  "passes_V2_criteria_on_these_clips": true,
+  "hello": {
+    "lib": "85c6999",
+    "report": 1,
+    "model": "394c9fad",
+    "opt": "speed"
+  },
+  "alloc": {
+    "status": 0,
+    "us": 21281,
+    "arena_capacity": 135736,
+    "arena_used": 133696
+  },
+  "mem": {
+    "heap_current": 876,
+    "heap_reserved": 45016,
+    "main_stack_used": 5872
+  },
+  "rows": [
+    {
+      "clip": 0,
+      "label": 0,
+      "feature_max_diff_vs_c_on_pc": 1.3396143913269043e-05,
+      "feature_identical_bits_vs_c_on_pc_pct": 7.744636316064887,
+      "feature_max_diff_vs_librosa": 1.697242259979248e-05,
+      "int8_identical_vs_librosa_pct": 100.0,
+      "int8_max_diff_vs_librosa": 0,
+      "int8_identical_vs_c_on_pc_pct": 100.0,
+      "int8_max_diff_vs_c_on_pc": 0,
+      "top_board": 0,
+      "top_pc": 0,
+      "softmax_max_diff": 0,
+      "top_probability_diff": 0.0,
+      "frame_us_min": 1914.671875,
+      "frame_us_mean": 1964.859375,
+      "frame_us_max": 1977.5781250000002,
+      "finish_ms": 47.19615625,
+      "invoke_ms": 1977.229484375
+    },
+    {
+      "clip": 1,
+      "label": 0,
+      "feature_max_diff_vs_c_on_pc": 2.2709369659423828e-05,
+      "feature_identical_bits_vs_c_on_pc_pct": 3.8984824699110416,
+      "feature_max_diff_vs_librosa": 2.1785497665405273e-05,
+      "int8_identical_vs_librosa_pct": 100.0,
+      "int8_max_diff_vs_librosa": 0,
+      "int8_identical_vs_c_on_pc_pct": 100.0,
+      "int8_max_diff_vs_c_on_pc": 0,
+      "top_board": 0,
+      "top_pc": 0,
+      "softmax_max_diff": 0,
+      "top_probability_diff": 0.0,
+      "frame_us_min": 1940.15625,
+      "frame_us_mean": 1966.5625,
+      "frame_us_max": 1978.296875,
+      "finish_ms": 47.59490625,
+      "invoke_ms": 1977.1285
+    },
+    {
+      "clip": 2,
+      "label": 0,
+      "feature_max_diff_vs_c_on_pc": 9.775161743164062e-06,
+      "feature_identical_bits_vs_c_on_pc_pct": 8.241758241758241,
+      "feature_max_diff_vs_librosa": 1.0214745998382568e-05,
+      "int8_identical_vs_librosa_pct": 100.0,
+      "int8_max_diff_vs_librosa": 0,
+      "int8_identical_vs_c_on_pc_pct": 100.0,
+      "int8_max_diff_vs_c_on_pc": 0,
+      "top_board": 0,
+      "top_pc": 0,
+      "softmax_max_diff": 4,
+      "top_probability_diff": 0.015625,
+      "frame_us_min": 1936.703125,
+      "frame_us_mean": 1966.484375,
+      "frame_us_max": 1977.2499999999998,
+      "finish_ms": 47.595375000000004,
+      "invoke_ms": 1977.032046875
+    }
+  ]
+}

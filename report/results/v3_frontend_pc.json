@@ -1,0 +1,446 @@
+{
+  "clips": 1204,
+  "digital_zero_clips": 2,
+  "excluding_digital_zero_clips": {
+    "clips": 1202,
+    "feature_max_abs_err_vs_librosa": 0.00014960765838623047,
+    "int8_input_identical_to_librosa_pct": 99.99862865919437,
+    "int8_input_max_abs_diff": 1,
+    "softmax_max_abs_diff_vs_librosa": 9
+  },
+  "accuracy_pct": {
+    "c": 95.43189368770764,
+    "numpy": 95.43189368770764,
+    "librosa": 95.43189368770764
+  },
+  "passes_V3_within_0p5_points": true,
+  "argmax_c_equals_librosa_pct": 100.0,
+  "softmax_max_abs_diff_vs_librosa": {
+    "max": 57,
+    "median": 0.0
+  },
+  "int8_input_identical_to_librosa_pct": 99.95177856473538,
+  "int8_input_max_abs_diff": 143,
+  "per_clip_int8_identical_min_pct": 71.7948717948718,
+  "feature_max_abs_err_vs_librosa": {
+    "mfcc": {
+      "max": 9.74715805053711,
+      "median": 1.4066696166992188e-05
+    },
+    "delta": {
+      "max": 3.343550205230713,
+      "median": 8.989329217001796e-06
+    },
+    "delta2": {
+      "max": 9.466581344604492,
+      "median": 1.2159347534179688e-05
+    }
+  },
+  "feature_max_abs_err_vs_numpy": {
+    "mfcc": {
+      "max": 14.764368057250977,
+      "median": 1.2284144759178162e-05
+    },
+    "delta": {
+      "max": 4.299964904785156,
+      "median": 7.241964340209961e-06
+    },
+    "delta2": {
+      "max": 6.778463363647461,
+      "median": 1.0132789611816406e-05
+    }
+  },
+  "worst_feature_clips": [
+    {
+      "err": 9.74715805053711,
+      "class": "_silence",
+      "file": "silence_mfa_0015.wav"
+    },
+    {
+      "err": 9.74715805053711,
+      "class": "_silence",
+      "file": "silence_amb_0327.wav"
+    },
+    {
+      "err": 0.00014960765838623047,
+      "class": "ні",
+      "file": "9__common_voice_uk_22433691__0002350.wav"
+    },
+    {
+      "err": 0.00014317035675048828,
+      "class": "_silence",
+      "file": "silence_noise_0686_brown.wav"
+    },
+    {
+      "err": 0.00013840198516845703,
+      "class": "_silence",
+      "file": "silence_noise_0704_brown.wav"
+    }
+  ],
+  "per_class": [
+    {
+      "class": "далі",
+      "clips": 42,
+      "recall_c_pct": 92.85714285714286,
+      "recall_librosa_pct": 92.85714285714286
+    },
+    {
+      "class": "два",
+      "clips": 55,
+      "recall_c_pct": 96.36363636363636,
+      "recall_librosa_pct": 96.36363636363636
+    },
+    {
+      "class": "добре",
+      "clips": 55,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    },
+    {
+      "class": "зараз",
+      "clips": 44,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    },
+    {
+      "class": "ні",
+      "clips": 97,
+      "recall_c_pct": 96.90721649484536,
+      "recall_librosa_pct": 96.90721649484536
+    },
+    {
+      "class": "один",
+      "clips": 43,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    },
+    {
+      "class": "ось",
+      "clips": 60,
+      "recall_c_pct": 93.33333333333333,
+      "recall_librosa_pct": 93.33333333333333
+    },
+    {
+      "class": "потім",
+      "clips": 30,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    },
+    {
+      "class": "сьогодні",
+      "clips": 27,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    },
+    {
+      "class": "так",
+      "clips": 242,
+      "recall_c_pct": 85.12396694214877,
+      "recall_librosa_pct": 85.12396694214877
+    },
+    {
+      "class": "там",
+      "clips": 78,
+      "recall_c_pct": 98.71794871794873,
+      "recall_librosa_pct": 98.71794871794873
+    },
+    {
+      "class": "три",
+      "clips": 23,
+      "recall_c_pct": 95.65217391304348,
+      "recall_librosa_pct": 95.65217391304348
+    },
+    {
+      "class": "тут",
+      "clips": 108,
+      "recall_c_pct": 95.37037037037037,
+      "recall_librosa_pct": 95.37037037037037
+    },
+    {
+      "class": "_silence",
+      "clips": 150,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    },
+    {
+      "class": "_unknown_",
+      "clips": 150,
+      "recall_c_pct": 100.0,
+      "recall_librosa_pct": 100.0
+    }
+  ],
+  "confusion_matrix_c": [
+    [
+      39,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      53,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      55,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      44,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      2,
+      94,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      43,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      56,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      30,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      27,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      2,
+      7,
+      0,
+      1,
+      0,
+      1,
+      0,
+      206,
+      13,
+      3,
+      6,
+      0,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      77,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      22,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      3,
+      0,
+      0,
+      103,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      150,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      150
+    ]
+  ],
+  "classes": [
+    "далі",
+    "два",
+    "добре",
+    "зараз",
+    "ні",
+    "один",
+    "ось",
+    "потім",
+    "сьогодні",
+    "так",
+    "там",
+    "три",
+    "тут",
+    "_silence",
+    "_unknown_"
+  ]
+}

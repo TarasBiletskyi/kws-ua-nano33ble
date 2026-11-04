@@ -75,6 +75,17 @@ def sparse_mel(mel: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.
             np.concatenate(weights).astype(np.float32))
 
 
+def fft_tables(n_fft: int) -> tuple[np.ndarray, np.ndarray]:
+    """Twiddles exp(-2*pi*i*k/n_fft), k < n_fft/2, as interleaved re, im, and the bit reversal of n_fft/2 indices."""
+    half = n_fft // 2
+    w = np.exp(-2j * np.pi * np.arange(half) / n_fft)
+    tw = np.empty(n_fft, dtype=np.float32)
+    tw[0::2], tw[1::2] = w.real.astype(np.float32), w.imag.astype(np.float32)
+    bits = int(np.log2(half))
+    rev = np.array([int(format(i, f"0{bits}b")[::-1], 2) for i in range(half)], dtype=np.int32)
+    return tw, rev
+
+
 def build_tables(cfg: dict, model_path: Path | None = None) -> dict:
     a, m = cfg["audio"], cfg["mfcc"]
     sr, n_fft, win_len, hop = int(a["sample_rate"]), int(m["n_fft"]), int(m["win_length"]), int(m["hop_length"])
@@ -112,6 +123,8 @@ def build_tables(cfg: dict, model_path: Path | None = None) -> dict:
         "classes": classes, "classes_ascii": [transliterate(c) if c not in BACKGROUND_CLASSES else c for c in classes],
         "keyword_indices": [i for i, c in enumerate(classes) if c not in BACKGROUND_CLASSES],
         "quant": read_quant_params(model_path) if model_path is not None else None,
+        "fft_tw": fft_tables(n_fft)[0],
+        "fft_bitrev": fft_tables(n_fft)[1],
     }
     return tables
 
@@ -167,11 +180,16 @@ def write_header(t: dict, path: Path) -> None:
     lines.append(_c_float_array("SG2_CENTER", t["sg2_center"], 9))
     lines.append(_c_float_array("SG2_HEAD", t["sg2_head"], 9))
     lines.append(_c_float_array("SG2_TAIL", t["sg2_tail"], 9))
+    lines.append("// FFT: exp(-2*pi*i*k/FE_N_FFT), k < FE_N_FFT/2, interleaved re, im; bit reversal of FE_N_FFT/2 indices")
+    lines.append(_c_float_array("FE_FFT_TW", t["fft_tw"]))
+    lines.append(_c_int_array("FE_FFT_BITREV", t["fft_bitrev"], "uint8_t"))
+    lines.append("#ifndef FE_TABLES_NO_CLASS_NAMES")
     lines.append("static const char* const KWS_CLASS_NAMES_UTF8[KWS_N_CLASSES] = {")
     lines.append("  " + ", ".join(f'u8"{c}"' for c in t["classes"]) + "\n};")
     lines.append("static const char* const KWS_CLASS_NAMES_ASCII[KWS_N_CLASSES] = {")
     lines.append("  " + ", ".join(f'"{c}"' for c in t["classes_ascii"]) + "\n};")
     lines.append(_c_int_array("KWS_KEYWORD_INDICES", np.array(t["keyword_indices"]), "uint8_t"))
+    lines.append("#endif  // FE_TABLES_NO_CLASS_NAMES")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
 

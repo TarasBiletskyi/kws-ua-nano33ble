@@ -1,0 +1,462 @@
+{
+  "old_library_Os": {
+    "hello": {
+      "report": 1,
+      "model": "394c9fad",
+      "opt": "size"
+    },
+    "alloc": {
+      "status": 0,
+      "us": 26914,
+      "arena_capacity": 163840,
+      "arena_used": 134920
+    },
+    "mem": {
+      "heap_current": 3404,
+      "heap_max": 3404,
+      "heap_reserved": 49384,
+      "main_stack": 32768,
+      "main_stack_used": 1368
+    },
+    "errors": [],
+    "bench": {
+      "runs": 20,
+      "status": 0,
+      "us_min": 2386086,
+      "us_mean": 2387087,
+      "us_max": 2387292,
+      "cycles_min": 152708865,
+      "cycles_mean": 152772790,
+      "cycles_max": 152785983,
+      "icache_hit": 87571038,
+      "icache_miss": 607897
+    },
+    "cycles_per_mac": 6.014676771653543,
+    "icache_hit_pct": 99.31060972782218,
+    "icache_miss_per_kcycle": 3.9790920883227963,
+    "x_over_300ms": 7.956956666666667,
+    "op_groups": [
+      {
+        "group": "first CONV_2D 10x4",
+        "cycles": 20452556,
+        "ms": 319.5711875,
+        "share_pct": 13.38756463111003,
+        "cycles_per_mac": 8.1810224
+      },
+      {
+        "group": "5 x DEPTHWISE 3x3",
+        "cycles": 43342581,
+        "ms": 677.227828125,
+        "share_pct": 28.37061560504328,
+        "cycles_per_mac": 15.479493214285714
+      },
+      {
+        "group": "5 x CONV_2D 1x1",
+        "cycles": 70158686,
+        "ms": 1096.22946875,
+        "share_pct": 45.923548296787665,
+        "cycles_per_mac": 3.5079343
+      },
+      {
+        "group": "MEAN",
+        "cycles": 18800905,
+        "ms": 293.764140625,
+        "share_pct": 12.306448681077304,
+        "cycles_per_mac": null
+      },
+      {
+        "group": "FULLY_CONNECTED",
+        "cycles": 6689,
+        "ms": 0.104515625,
+        "share_pct": 0.004378397488191451,
+        "cycles_per_mac": null
+      },
+      {
+        "group": "SOFTMAX",
+        "cycles": 9542,
+        "ms": 0.14909375,
+        "share_pct": 0.006245876638110753,
+        "cycles_per_mac": null
+      }
+    ],
+    "v1": {
+      "vectors": [
+        {
+          "vec": 0,
+          "pc_index": 0,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 14,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        },
+        {
+          "vec": 1,
+          "pc_index": 1,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 12,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 13,
+          "prob_max_diff_tflite217": 12,
+          "prob_diff_n_tflite217": 2
+        },
+        {
+          "vec": 2,
+          "pc_index": 2,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 34,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 9,
+          "prob_max_diff_tflite217": 30,
+          "prob_diff_n_tflite217": 2
+        },
+        {
+          "vec": 3,
+          "pc_index": 3,
+          "label": 1,
+          "top_device": 1,
+          "top_litert": 1,
+          "prob_max_diff_litert": 1,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 13,
+          "prob_max_diff_tflite217": 1,
+          "prob_diff_n_tflite217": 2
+        },
+        {
+          "vec": 4,
+          "pc_index": 4,
+          "label": 1,
+          "top_device": 1,
+          "top_litert": 1,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 19,
+          "prob_max_diff_tflite217": 1,
+          "prob_diff_n_tflite217": 1
+        }
+      ],
+      "argmax_ok": true,
+      "prob_max_diff": 34,
+      "gap_max_diff": 1
+    }
+  },
+  "old_library_O3": {
+    "hello": {
+      "report": 1,
+      "model": "394c9fad",
+      "opt": "speed"
+    },
+    "alloc": {
+      "status": 0,
+      "us": 21135,
+      "arena_capacity": 163840,
+      "arena_used": 134920
+    },
+    "mem": {
+      "heap_current": 3404,
+      "heap_max": 3404,
+      "heap_reserved": 49376,
+      "main_stack": 32768,
+      "main_stack_used": 1160
+    },
+    "errors": [],
+    "bench": {
+      "runs": 20,
+      "status": 0,
+      "us_min": 1967797,
+      "us_mean": 1969214,
+      "us_max": 1970482,
+      "cycles_min": 125938358,
+      "cycles_mean": 126029104,
+      "cycles_max": 126110184,
+      "icache_hit": 75510904,
+      "icache_miss": 667772
+    },
+    "cycles_per_mac": 4.961775748031496,
+    "icache_hit_pct": 99.12341348647224,
+    "icache_miss_per_kcycle": 5.298553895931848,
+    "x_over_300ms": 6.564046666666667,
+    "op_groups": [
+      {
+        "group": "first CONV_2D 10x4",
+        "cycles": 14437243,
+        "ms": 225.581921875,
+        "share_pct": 11.455483330263142,
+        "cycles_per_mac": 5.7748972
+      },
+      {
+        "group": "5 x DEPTHWISE 3x3",
+        "cycles": 37503693,
+        "ms": 585.995203125,
+        "share_pct": 29.75796209738982,
+        "cycles_per_mac": 13.394176071428571
+      },
+      {
+        "group": "5 x CONV_2D 1x1",
+        "cycles": 61939097,
+        "ms": 967.798390625,
+        "share_pct": 49.146661393387355,
+        "cycles_per_mac": 3.09695485
+      },
+      {
+        "group": "MEAN",
+        "cycles": 12131197,
+        "ms": 189.549953125,
+        "share_pct": 9.62571074059211,
+        "cycles_per_mac": null
+      },
+      {
+        "group": "FULLY_CONNECTED",
+        "cycles": 6041,
+        "ms": 0.094390625,
+        "share_pct": 0.00479333725962219,
+        "cycles_per_mac": null
+      },
+      {
+        "group": "SOFTMAX",
+        "cycles": 10127,
+        "ms": 0.158234375,
+        "share_pct": 0.00803544552693162,
+        "cycles_per_mac": null
+      }
+    ],
+    "v1": {
+      "vectors": [
+        {
+          "vec": 0,
+          "pc_index": 0,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 14,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        },
+        {
+          "vec": 1,
+          "pc_index": 1,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 12,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 13,
+          "prob_max_diff_tflite217": 12,
+          "prob_diff_n_tflite217": 2
+        },
+        {
+          "vec": 2,
+          "pc_index": 2,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 34,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 9,
+          "prob_max_diff_tflite217": 30,
+          "prob_diff_n_tflite217": 2
+        },
+        {
+          "vec": 3,
+          "pc_index": 3,
+          "label": 1,
+          "top_device": 1,
+          "top_litert": 1,
+          "prob_max_diff_litert": 1,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 13,
+          "prob_max_diff_tflite217": 1,
+          "prob_diff_n_tflite217": 2
+        },
+        {
+          "vec": 4,
+          "pc_index": 4,
+          "label": 1,
+          "top_device": 1,
+          "top_litert": 1,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 19,
+          "prob_max_diff_tflite217": 1,
+          "prob_diff_n_tflite217": 1
+        }
+      ],
+      "argmax_ok": true,
+      "prob_max_diff": 34,
+      "gap_max_diff": 1
+    }
+  },
+  "litert_micro_O3": {
+    "hello": {
+      "lib": "85c6999",
+      "report": 1,
+      "model": "394c9fad",
+      "opt": "speed"
+    },
+    "alloc": {
+      "status": 0,
+      "us": 21667,
+      "arena_capacity": 163840,
+      "arena_used": 133688
+    },
+    "mem": {
+      "heap_current": 876,
+      "heap_max": 876,
+      "heap_reserved": 50992,
+      "main_stack": 32768,
+      "main_stack_used": 1624
+    },
+    "errors": [],
+    "bench": {
+      "runs": 20,
+      "status": 0,
+      "us_min": 1968174,
+      "us_mean": 1969907,
+      "us_max": 1970561,
+      "cycles_min": 125962492,
+      "cycles_mean": 126073405,
+      "cycles_max": 126115197,
+      "icache_hit": 75546503,
+      "icache_miss": 707854
+    },
+    "cycles_per_mac": 4.963519881889764,
+    "icache_hit_pct": 99.07171992808227,
+    "icache_miss_per_kcycle": 5.6146179283410325,
+    "x_over_300ms": 6.566356666666667,
+    "op_groups": [
+      {
+        "group": "first CONV_2D 10x4",
+        "cycles": 13232810,
+        "ms": 206.76265625,
+        "share_pct": 10.496115338520443,
+        "cycles_per_mac": 5.293124
+      },
+      {
+        "group": "5 x DEPTHWISE 3x3",
+        "cycles": 33452804,
+        "ms": 522.7000625,
+        "share_pct": 26.534386058661617,
+        "cycles_per_mac": 11.94743
+      },
+      {
+        "group": "5 x CONV_2D 1x1",
+        "cycles": 64617365,
+        "ms": 1009.646328125,
+        "share_pct": 51.25376363079906,
+        "cycles_per_mac": 3.23086825
+      },
+      {
+        "group": "MEAN",
+        "cycles": 14752366,
+        "ms": 230.50571875,
+        "share_pct": 11.701409984127897,
+        "cycles_per_mac": null
+      },
+      {
+        "group": "FULLY_CONNECTED",
+        "cycles": 6053,
+        "ms": 0.094578125,
+        "share_pct": 0.004801171190704336,
+        "cycles_per_mac": null
+      },
+      {
+        "group": "SOFTMAX",
+        "cycles": 10542,
+        "ms": 0.16471875,
+        "share_pct": 0.008361795257294748,
+        "cycles_per_mac": null
+      }
+    ],
+    "v1": {
+      "vectors": [
+        {
+          "vec": 0,
+          "pc_index": 0,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 12,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        },
+        {
+          "vec": 1,
+          "pc_index": 1,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 13,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        },
+        {
+          "vec": 2,
+          "pc_index": 2,
+          "label": 0,
+          "top_device": 0,
+          "top_litert": 0,
+          "prob_max_diff_litert": 4,
+          "prob_diff_n_litert": 2,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 8,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        },
+        {
+          "vec": 3,
+          "pc_index": 3,
+          "label": 1,
+          "top_device": 1,
+          "top_litert": 1,
+          "prob_max_diff_litert": 0,
+          "prob_diff_n_litert": 0,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 14,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        },
+        {
+          "vec": 4,
+          "pc_index": 4,
+          "label": 1,
+          "top_device": 1,
+          "top_litert": 1,
+          "prob_max_diff_litert": 1,
+          "prob_diff_n_litert": 1,
+          "gap_max_diff_litert": 1,
+          "gap_diff_n_litert": 19,
+          "prob_max_diff_tflite217": 0,
+          "prob_diff_n_tflite217": 0
+        }
+      ],
+      "argmax_ok": true,
+      "prob_max_diff": 4,
+      "gap_max_diff": 1
+    }
+  }
+}

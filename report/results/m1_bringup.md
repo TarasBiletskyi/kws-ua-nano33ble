@@ -102,3 +102,85 @@ spot, and the firmware's frame gate must estimate the floor adaptively rather th
 of work per sample inside the callback; the KWS firmware computes the log-mel per 10 ms frame in the main loop while
 `Invoke()` blocks for hundreds of milliseconds, so there the 1-s ring buffer and the catch-up logic of the plan carry
 this property — to be re-checked at M4. JSON `m1_pdm_stability_gain80.json`.
+
+## Step 4 (2026-11-03) — RAM baseline: `firmware/bringup/ram_baseline`
+
+Question: how much of the 256 KB SRAM do the Mbed core, the RTOS and the USB serial link take, and does the plan's KWS
+budget (tensor arena 160 KB + audio ring 32,000 B + log-mel ring 15,520 B = 211,360 B) fit next to them? One sketch,
+two builds (`-DRAM_BASELINE_WITH_KWS_BUFFERS=1 -DKWS_ARENA_KB=160` for build B), printing every 2 s the linker symbols,
+the Mbed heap statistics (`mbed_stats_heap_get`), the per-thread stack statistics (`mbed_stats_thread_get_each`), a
+malloc probe and the addresses of the KWS buffers. Logs `tools/out/ram/ram_baseline_{a,b}.log` (untracked), JSON
+`m1_ram_baseline.json` (`tools/ram_baseline_parse.py`). Two flashes, both boards talked back within 1.6 s.
+
+### 4a — RAM map as linked, and what the board reports
+
+RAM 0x20000000–0x20040000 (262,144 B). The first 0x200 = 512 B are reserved by the core (RAM vector table 0x100 + crash
+data 0x100), the last 0x400 = 1,024 B are the ISR/boot stack (`__StackLimit`…`__StackTop`). Everything else, 260,608 B,
+is `.data` + `.bss` + heap (`__end__`…`__HeapLimit`); the heap takes whatever the statics leave.
+
+| | build A (empty) | build B (+ KWS buffers) |
+|---|---|---|
+| Flash (`Sketch uses`) | 88,272 B (8 %) | 88,712 B (9 %) |
+| Static = `.data` + `.bss` (compiler: `Global variables`) | 3,560 + 40,992 = **44,552 B** (16 %) | 3,560 + 252,352 = **255,912 B** (97 %); 255,920 B by the linker symbols, the `alignas(16)` arena shifts `.bss` by 8 B |
+| of which Mbed main-thread stack `_main_stack` (a static array in `.bss`) | 32,768 B | 32,768 B |
+| Core static without the main stack | **11,784 B** | 11,792 B |
+| of which KWS buffers | — | 211,360 B: arena 163,840 @ 0x2000C9B0, audio ring 32,000 @ 0x2000100C, log-mel ring 15,520 @ 0x20008D0C |
+| Heap region (`__end__`…`__HeapLimit`) | **216,056 B** | **4,688 B** |
+| Heap in use at run time (`current` + statistics overhead) | **976 B**, 7 allocations, constant over the run | 976 B, 7 allocations |
+| Heap peak since reset (`max`) | polluted by the v1 probe | 1,388 B = steady state + the 512 B probe → no start-up transient above ≈1.4 KB |
+| RTOS threads: reserved / max used | main 32,768 / 824; rtx_idle 512 / 392; rtx_timer 768 / 104; USBevt 256 / 136 (heap-allocated) | main 32,768 / 1,912 (the probe's 1 KB pointer array); the others identical |
+| `mbed_stats_stack_get`: stacks, reserved, max used | 4, 34,304 B, 1,456 B | 4, 34,304 B, 2,544 B |
+| Largest single `malloc()` | 113,671 B (sketch v1, binary search — an artefact, see 4c) | 512 B (sketch v1.1, descending search — see 4c) |
+| Total obtainable in 1 KB pieces | — (v1 had no fill probe) | 0 B |
+| Boots, USB serial, LED | yes; 72 lines / 12 s | **yes**; 72 lines / 12 s, checksum over the buffers advancing, heap figures constant |
+
+### 4b — where the 44.5 KB of static RAM go (build A, `arm-none-eabi-nm -S --size-sort`)
+
+| Symbols | Bytes | Note |
+|---|---|---|
+| `_main_stack` | 32,768 | Mbed OS main thread = the thread that runs `setup()`/`loop()`. The empty sketch uses 824 B of it, the probe build 1,912 B, so ≈30 KB of it are **ours** for per-window scratch (FFT buffers, MFCC rows) |
+| `PluggableUSBD()::obj` 1,424, `_SerialUSB` 696, `m_ep_state` 288, `_UART_USB_` 308, `_UART1_` 308 | 3,024 | USB CDC device, Arduino `Serial` objects, Mbed UART handles |
+| `impure_data` 1,064, `__malloc_av_` 1,032, `__global_locale` 364, `filehandles` 256 | 2,716 | newlib: stdio state, malloc bins, locale, file handles |
+| `os_timer_thread_stack` 768, `os_idle_thread_stack` 512 (+ control blocks below 256 B) | 1,280 | RTX5 kernel threads — static, already inside the 44.5 KB |
+| `g_APinDescription` | 544 | Arduino pin table |
+| `bbEncryptTxBuf` 256, `bbEncryptOutBuf` 260, `bbEncryptScratchBuf` 269 | 785 | BLE link-layer crypto buffers the linker keeps although BLE is unused |
+| 166 symbols below 256 B | 3,295 | drivers, RTOS objects, USB endpoint state, our sketch |
+
+(The RAM vector table `nrf_dispatch_vector`, 256 B at 0x20000000, lives in the reserved low 512 B, not in `.bss`; the
+remaining ≈140 B of the 44,552 are alignment padding.)
+
+### 4c — the two malloc probes, and what they say about the heap
+
+Build A, sketch v1 (binary search from below): after the first success (108,028 B) newlib's dlmalloc keeps the freed block
+as the top chunk (it trims only above 128 KB) and, for any request larger than that chunk, asks `_sbrk` for the **whole**
+new size rather than for the missing part, so every request above the top-chunk size (≈113.7 KB) fails although ≈215 KB
+are free. The 113,671 B figure is the size of that top chunk, not the capacity; the capacity of build A is heap region −
+in use = 216,056 − 976 ≈ 215 KB. Sketch v1.1 searches downwards (every failed attempt leaves the heap untouched) and adds
+a 1 KB fill probe.
+
+Build B, sketch v1.1: of the 4,688 B heap region only 512 B could be allocated and the 1 KB fill got nothing. Reason:
+dlmalloc extends the heap in 4,096 B pages and at start rounds the break up to the next page boundary (0x2003F000), which
+leaves a first chunk of 1,616 B (0x2003E9B0…0x2003F000) holding the 976 B the core needs and ≈600 B free; the remaining
+3,072 B up to `__HeapLimit` can never be reached because the next extension would need a full 4,096 B page. **Rule for
+the KWS firmware: leave a heap region of at least 8 KB** (one full page after the first page boundary plus the core's
+1 KB) — i.e. keep the static total below ≈252 KB.
+
+### 4d — budget and decision
+
+| Item | Bytes |
+|---|---|
+| RAM for `.data` + `.bss` + heap (262,144 − 512 − 1,024) | 260,608 |
+| − core static including the 32 KB main stack (measured) | −44,552 |
+| = available for KWS statics + heap | 216,056 |
+| − heap region (rule ≥ 8 KB; the core needs 976 B) | −8,192 |
+| = **safe static budget for arena + rings + modules** | **≈207,800** |
+| Plan as written: arena 160 KB + audio ring 32,000 + log-mel ring 15,520 | 211,360 → boots (build B) with a 4.7 KB heap region: **at the edge** |
+| Plan with the arena at the realistic 135–145 KB (M2 measures `arena_used_bytes()`) | 185,000–195,000 → **15–23 KB spare** |
+
+**Decision: the full model goes ahead; no stride-(4,2) variant is needed for RAM.** Firmware rules derived here:
+(1) `KWS_ARENA_BYTES` starts at 160 KB only for the M2 measurement and is then set to `arena_used_bytes()` + 2 KB, with
+the static total kept ≤ 252 KB; (2) the heap region stays ≥ 8 KB; (3) per-window scratch (FFT, MFCC rows) lives on the
+32 KB main-thread stack, not in `.bss`; (4) the log-mel ring moves to int16 Q8.8 (−7.8 KB) only if M2 shows the arena
+above ≈150 KB. The M2 gate is therefore about latency (window finish + Invoke ≤ 300 ms), not about RAM.
+
+**M1 complete** — gates: PDM 16 kHz stable for 10 minutes (step 3), RAM baseline (this step).
